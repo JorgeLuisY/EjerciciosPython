@@ -15,23 +15,23 @@ class Arbol :
 	def total(arbol) :
 		if arbol == None : return 0
 		return total(arbol.izquierdo) + total(arbol.derecho) + carga
-	def imprimirArbol(arbol):
-		if arbol == None : return
-		print (arbol.carga , )
-		imprimirArbol(arbol.izquierdo)
-		imprimirArbol(arbol.derecho)
-	def imprimirArbolPostOrden(arbol):
-		if arbol == None : return
-		imprimirArbol(arbol.izquierdo)
-		imprimirArbol(arbol.derecho)
-		print (arbol.carga ,)
-	def imprimirArbolEnOrden(arbol):
-		if arbol == None : return
-		imprimirArbolEnOrden(arbol.izquiedo)
-		print (arbol.carga , )
-		imprimirArbolEnOrden(arbol.derecho)
-	def imprimirArbolIndentado(arbol, level=0) :
-		if arbol == None : return
-		imprimirArbolIndentado(arbol.derecho, level+1)
-		print (' ' * level + str(arbol.carga))
-		imprimirArbolIndentado(arbol.izquierdo, level+1)
+	def imprimirArbol(self):
+		if self == None : return
+		print (self.carga , )
+		imprimirArbol(self.izquierdo)
+		imprimirArbol(self.derecho)
+	def imprimirArbolPostOrden(self):
+		if self == None : return
+		imprimirArbolPostOrden(self.izquierdo)
+		imprimirArbolPostOrden(self.derecho)
+		print (self.carga ,)
+	def imprimirArbolEnOrden(self):
+		if self == None : return
+		imprimirArbolEnOrden(self.izquiedo)
+		print (self.carga , )
+		imprimirArbolEnOrden(self.derecho)
+	def imprimirArbolIndentado(self, level=0) :
+		if self == None : return
+		imprimirArbolIndentado(self.derecho, level+1)
+		print (' ' * level + str(self.carga))
+		imprimirArbolIndentado(self.izquierdo, level+1)
