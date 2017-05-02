@@ -1,3 +1,8 @@
+def si(pregunta): #funcion de ayuda
+	respuesta = (input(pregunta + "\n")).lower()
+	print()
+	return ( respuesta[0] == 's' or  respuesta[0] == 'y' )
+
 def animal() :
 	# arbol con un solo nodo
 	raiz = Arbol("pajaro")
@@ -26,16 +31,13 @@ def animal() :
 		pregunta = input(prompt % (animal,conjetura))
 		# agrega mas informacion al Arbol
 		arbol.asignarCarga(pregunta)
-		prompt = "Si el animal fuera un %s , la respuesta seria ?  \n"
+		prompt = "Estas pensando en un %s ? "
 		if si(prompt % animal) :
 			arbol.asignarIzquierdo(Arbol(conjetura))
 			arbol.asignarDerecho(Arbol(animal))
 		else :
-			arbol.asignarIzquierdo(Arbol(animal))
-			arbol.asignarDerecho(Arbol(conjetura))
+			arbol.asignarIzquierdo(Arbol(conjetura))
+			arbol.asignarDerecho(Arbol(animal))
 			
-def si(pregunta):
-	respuesta = (input(pregunta + "\n")).lower()
-	print()
-	return ( respuesta[0] == 's' or  respuesta[0] == 'y' )
+
                 
